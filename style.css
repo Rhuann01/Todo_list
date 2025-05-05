@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*color: #ffffffc2; */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --cor-fundo: #c48dd66b;
+  --cor-principal: #6b3a6b;
+  --cor-text: #fff;
+  --bto: #ffffffb0;
+  --bordas: rgba(255, 255, 255, 0.2);
+  --cor-secundaria: #ff61f27a;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url(img/fundo.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100dvh;
+  width: 100vw;
+}
+
+.card {
+  opacity: 0;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 50%;
+  max-width: 50%;
+  padding: 20px;
+  border-radius: 20px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--bordas);
+  box-shadow: 10px 10px 45px -12px rgba(0, 0, 0, 0.349);
+  margin-left: 27%;
+  transform: translateY(-3%);
+  max-height: 103%;
+}
+
+.textarea {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  padding: 15px;
+  font-size: 12pt;
+  position: relative;
+  color: #ffff;
+}
+
+.textarea > h1 {
+  font-size: 23pt;
+}
+
+.tarefas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: var(--cor-fundo);
+  padding-top: 26%;
+  border-radius: 10px;
+  border: 3px solid var(--bordas);
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 10px 10px 45px -12px rgba(0, 0, 0, 0.349);
+}
+
+.tarefas::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tarefas::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tarefas::-webkit-scrollbar-thumb {
+  background-color: var(--cor-secundaria);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.estiloTarefa {
+  border: 3px solid rgba(85, 85, 85, 0.308);
+  background-color: #ffffffb0;
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 5px;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 10px 10px 45px -12px rgba(0, 0, 0, 0.349);
+}
+
+.estiloTarefa > h1 {
+  font-size: 12pt;
+}
+
+.tarefas:hover .estiloTarefa {
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+.tarefas:hover {
+  transform: scale(1.1);
+}
+
+.tarefas:hover .estiloTarefa:hover {
+  filter: none;
+  opacity: 1;
+  z-index: 10;
+}
+
+.estiloTarefa > h1,
+.estiloTarefa > p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+@keyframes levitar {
+  0% {
+    transform: translateY();
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY();
+  }
+}
+
+/* area dos inputs */
+
+.input-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputs > label {
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 12pt;
+}
+
+.inputs > input {
+  background: rgba(255, 255, 255, 0.253);
+  font-size: 13pt;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 2px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 45px -12px rgba(0, 0, 0, 0.349);
+  transition: transform 0.2s ease-in-out;
+  color: #fff;
+}
+
+.inputs > input:hover {
+  transform: scale(1.05);
+  border: 3px solid #ff69da71;
+}
+
+.inputs > input::placeholder {
+  font-weight: 600;
+  color: #ffffffc7;
+}
+
+.inputs > input:focus {
+  outline: none;
+  border: 3px solid var(--cor-fundo);
+}
+
+.bto {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-color: var(--bto);
+  transition: transform 0.2s ease-in-out;
+  color: #6d0e6d59;
+}
+
+.bto:hover {
+  box-shadow: 0 10px 40px -12px rgba(255, 117, 255, 0.342);
+  transform: scale(1.1);
+  background-color: var(--cor-secundaria);
+}
+
+/* AREA DE LOGIN */
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.textoLogin {
+  padding: 15px;
+  border-radius: 10px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid var(--bordas);
+  color: #fff;
+  width: 35%;
+  box-shadow: 10px 10px 45px -12px rgba(0, 0, 0, 0.349);
+}
+
+.textoLogin > h2 {
+  font-size: 25pt;
+}
+
+.textoLogin > input {
+  color: #fff;
+  border: solid 2px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.253);
+  font-size: 13pt;
+  width: 100%;
+  padding: 15px 15px 20px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  box-shadow: 10px 10px 45px -12px rgba(0, 0, 0, 0.349);
+  transition: transform 0.2s ease-in-out;
+}
+
+.textoLogin > input:hover {
+  transform: scale(1.05);
+  border: 3px solid #ff69da71;
+}
+
+.textoLogin > input:focus {
+  outline: none;
+  border: 3px solid var(--cor-fundo);
+}
+
+.textoLogin > input::placeholder {
+  font-weight: 600;
+  color: #ffffffc7;
+}
+
+/*ENTRAR E SAIR, SEM SAFADEZA, LA ELE*/
+
+.tela {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in;
+  opacity: 1;
+  z-index: 99;
+}
+
+.oculta {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -99;
+  animation: sair 0.5s ease-out forwards;
+}
+
+@keyframes sair {
+  from {
+    opacity: 1;
+    transform: translateY();
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes cheguei {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY();
+  }
+}
+
+/*responsividade*/
+

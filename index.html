@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo-List</title>
+  </head>
+  <body>
+    <div class="conteiner">
+      <div class="login tela" id="login_tl">
+        <div class="textoLogin">
+          <h2>login</h2>
+          <input type="text" id="nome" placeholder="Digite seu nome" />
+          <button type="button" onclick="btoLogin()" class="bto">Entrar</button>
+        </div>
+      </div>
+
+      <div class="card ocuta" id="cartao">
+        <div class="textarea" id="txts">
+          <h1 id="Bem_vindo">Seja bem-vindo, Rhuann!</h1>
+          <p>Vamos adicionar tarefas à sua lista?</p>
+          <div class="input-area">
+            <div class="inputs">
+              <label for="titulo">Titulo</label>
+              <input type="text" id="titulo" placeholder="Escreva o titulo" />
+            </div>
+            <div class="inputs">
+              <label for="des">Descrição</label>
+              <input type="text" id="des" placeholder="Escreva mais sobre" />
+            </div>
+            <button type="button" class="bto" onclick="Adbto()">
+              adicionar
+            </button>
+          </div>
+        </div>
+
+        <div class="tarefas" id="taref"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
